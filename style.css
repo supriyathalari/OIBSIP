@@ -1,119 +1,220 @@
-* {
-    padding: 0;
-    margin: 0;
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+/* ----------------header section-------------------*/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(image/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative ;
+
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 250px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #e97911;
+    display: block;
+    margin: auto;
+    transition: 0.5;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.description{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.description h1{
+    font-size: 62px;
+}
+.description p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.btn{
+    display: inline block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+}
+.btn:hover{
+    border: 1px solid #e97911;
+    background: #e97911;
+    transition: 1s;
+}
+
+nav .bi{
+    display: none;
+}
+
+/*------------ courses------------*/
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 18px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
     box-sizing: border-box;
-    outline: 0;
-    transition: all 0.5s ease;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
 }
 
-body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.course-col:hover{
+    box-shadow: 0 0 20px 0 rgb(54, 51, 51);
+}
+/*--------------------- facilities-------------------------------------- */
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-a {
+/* ------------review---------------- */
+
+.review{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    text-align: center;
+}
+.review-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.review-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.review-col p{
+    padding: 0;
+}
+.review-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.review-col .bi{
+    color: #e97911;
+}
+@media(max-width:700px){
+    .review-col img{
+        height: 40px;
+        margin-left: 5px;
+        margin-right: 30;
+        border-radius: 50%;
+    }
+}
+
+/* --------footer----------- */
+footer{
+    height: 40px;
+    display: flex;
+    background-color: #19191a;
+    justify-content: center;
+    align-items: center;
+}
+h4{
+    color: #e97911;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+h4 a{
     text-decoration: none;
     color: #fff;
 }
-
-body {
-  background: linear-gradient(to right,  rgb(73, 80, 83), rgb(169, 163, 228) ,  rgb(74, 141, 180));
+h4 a:hover{
+    color: #e97911;
+    transition-delay: 0.3s;
 }
-
-.container {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    place-items: center;
-
-}
-
-.calculator {
-    position: relative;
-    height: auto;
-    width: auto;
-    padding: 25px;
-    border: 2px solid yellow;
-    border-radius: 15%;
-}
-
-#display {
-    margin: 0 5px;
-    height: 150px;
-    width: auto;
-    max-width: 270px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: black;
-    padding-right: 5%;
-    overflow-x: scroll;
-    background-color: white;
-    border-radius: 15px;
-    border: 2px solid blue;
-  }
-
-#display::-webkit-scrollbar {
-    display: block;
-    height: 3px;
-}
-
-button {
-    height: 60px;
-    width: 60px;
-    border: 0;
-    border-radius: 30px;
-    margin: 5px;
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 200ms ease;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-button#equal {
-    height: 130px;
-}
-  .calculator.dark {
-    background: linear-gradient(to right,  rgb(47, 51, 53), black ,  rgb(9, 26, 36));
-  }
-
-  .calculator.dark #display {
-    color: black;
-  }
-
-  .calculator.dark button#clear {
-    background-color: rgb(255, 21, 169);
-    color: black;
-    font-weight: bolder;
-    font-size: 30px;
-  }
-
-  .calculator.dark button.btn-number {
-    background-color: black;
-    color: white;
-    font-weight: bolder;
-    border-radius: 19%;
-    border: 2px solid blue;
-  }
-
-  .calculator.dark button.btn-operator {
-    background-color: #a5abf8;
-    color:black;
-    font-size: 30px;
-    border: 1px solid rgb(184, 184, 125);
-  }
-  
-  .calculator.dark button.btn-equal {
-    background-color: white;
-    color: rgb(12, 6, 6);
-    font-weight: bold;
-    font-size:35px;
-  }
-  .text-center{
-      text-align: center;
-  }
